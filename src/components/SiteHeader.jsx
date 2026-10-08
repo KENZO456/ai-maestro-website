@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { MaestroMark } from './MaestroMark';
+import { BookLink } from './BookLink';
 
 const NAV = [
   { label: 'Home', href: '/' },
@@ -58,7 +59,7 @@ export function SiteHeader({ dark = false }) {
               </Link>
             ))}
           </nav>
-          <Link to="/contact" className="btn btn-ink">Let&rsquo;s Talk {ARROW}</Link>
+          <BookLink className="btn btn-ink">Book a call {ARROW}</BookLink>
           <button
             className="nav-toggle"
             aria-label="Open menu"

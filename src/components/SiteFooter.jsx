@@ -22,7 +22,7 @@ export function SiteFooter() {
             <span className="serif" style={{ fontSize: 26 }}>AI <span style={{ fontStyle: 'italic' }}>maestro</span></span>
           </div>
           <div className="serif" style={{ fontSize: 'clamp(1rem, 1.6vw, 1.2rem)', marginTop: 22, opacity: .82, maxWidth: 360, lineHeight: 1.3 }}>
-            Delivering measurable results, fast.<br />Orchestrating AI. Optimizing operations.
+            <strong style={{ fontWeight: 400 }}>AI Maestro. In sync.</strong><br />AI and automation for UK small businesses.
           </div>
           <div style={{ display: 'flex', gap: 12, marginTop: 28 }}>
             {SOCIALS.map((s) => (

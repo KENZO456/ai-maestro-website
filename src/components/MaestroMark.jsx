@@ -57,7 +57,7 @@ export function MaestroMark3D({ size = 280, faceColor = '#FAF8F4', sideColor = '
   }
   return (
     <div style={{ perspective: '1400px', width: size, height: (size * MARK_H) / MARK_W, position: 'relative' }}>
-      <div style={{
+      <div className={spin ? 'mark3d-spin' : undefined} style={{
         width: '100%', height: '100%', position: 'relative', transformStyle: 'preserve-3d',
         animation: spin ? 'maestro-spin 9s linear infinite' : 'none',
       }}>

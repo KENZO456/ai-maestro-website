@@ -100,7 +100,7 @@ function ContactForm() {
         <span className="msg">{errs.message || ''}</span>
       </div>
       <button type="submit" className="btn btn-blue" style={{ justifyContent: 'center', padding: '16px 24px', fontSize: 15 }}>
-        Let&rsquo;s Talk {ARROW}
+        Send message {ARROW}
       </button>
     </form>
   );

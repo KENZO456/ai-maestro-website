@@ -12,9 +12,9 @@ import { usePageBoot } from '../hooks/usePageBoot';
 const B = { blue: '#1100D8', blueLite: '#E6E4FF', white: '#FAF8F4', ink: '#0B0B2B' };
 
 const POSTS = [
-  { cat: 'Automation', read: '6 min read', seed: 12, gw: 4, gh: 3, icon: 'flow', title: '5 Workflows SMBs Automate First (And Save 10+ Hours/Week)', dek: 'The five processes we automate first for almost every client, and the hours they hand straight back to your team.' },
+  { cat: 'Automation', read: '6 min read', seed: 12, gw: 4, gh: 3, icon: 'flow', title: '5 Workflows Small Businesses Automate First (And Save 10+ Hours/Week)', dek: 'The five processes we automate first for almost every client, and the hours they hand straight back to your team.' },
   { cat: 'Operations', read: '4 min read', seed: 34, gw: 3, gh: 3, icon: 'clock', title: 'Why Your Team Hates Manual Data Entry (And What To Do About It)', dek: 'The hidden cost of copy-paste work, and the simplest way to make it disappear.' },
-  { cat: 'Guide', read: '8 min read', seed: 56, gw: 3, gh: 4, icon: 'brain', title: 'AI For SMBs: A Non-Technical Guide To Automation That Actually Works', dek: 'No jargon. Just a plain-English map of where AI actually pays off for a small business.' },
+  { cat: 'Guide', read: '8 min read', seed: 56, gw: 3, gh: 4, icon: 'brain', title: 'AI For Small Businesses: A Non-Technical Guide To Automation That Actually Works', dek: 'No jargon. Just a plain-English map of where AI actually pays off for a small business.' },
 ];
 
 function Cover({ post, dark, h = 220 }) {
@@ -76,8 +76,8 @@ export default function BlogPage() {
       <SiteHeader dark={true} />
       <PageHero
         eyebrow="Insights & Ideas"
-        title={<>Practical thinking,<br /><span className="serif" style={{ fontWeight: 400, color: '#E6E4FF' }}>zero fluff.</span></>}
-        sub="Practical tips for SMBs. How to think about AI. Client case studies. No fluff, just useful content."
+        title={<>Practical thinking,<br /><span className="serif" style={{ fontWeight: 400, color: '#E6E4FF' }}>no jargon.</span></>}
+        sub="Practical tips for small businesses. How to think about AI. Client case studies. Just useful content."
         minH="58vh"
       />
       <section data-section="blog" style={{ background: B.white, color: B.ink, padding: 'clamp(4rem, 8vw, 6.5rem) clamp(1.5rem, 5vw, 5rem)' }}>
