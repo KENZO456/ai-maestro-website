@@ -250,6 +250,29 @@ function RecentWork() {
     { tag: 'WORKFLOW AUTOMATION', icon: 'flow', img: IMAGES.case2, client: 'CRM auto-sync', problem: 'A sales team logged every deal in the CRM by hand after each conversation. It was slow, and updates got forgotten.', stats: ['5 hrs a week saved', '£2.5k project, paid back in 10 weeks'], did: 'We connected Slack to the CRM, so every deal conversation fills in the right record by itself. No copy-paste, no missed updates, and cleaner pipeline data as a bonus.' },
     { tag: 'AI CONTENT', icon: 'spark', img: IMAGES.case3, client: 'LinkedIn content engine', problem: 'A founder needed four LinkedIn posts a week but had no time to write them, so posting stopped.', stats: ['3× engagement', '30 minutes a week of the founder’s time'], did: 'Our content engine drafts on-brand posts in about an hour. The founder spends 30 minutes editing and publishing. Posting is steady again, and nobody is stressing about the next one.' },
   ];
+  // Drag to scroll (mouse and pen; touch uses native swipe).
+  const drag = useRef({ down: false, x: 0, left: 0, moved: false });
+  const onPointerDown = (e) => {
+    if (e.pointerType === 'touch') return;
+    const el = scrollerRef.current;
+    drag.current = { down: true, x: e.clientX, left: el.scrollLeft, moved: false };
+    el.classList.add('dragging');
+    el.setPointerCapture(e.pointerId);
+  };
+  const onPointerMove = (e) => {
+    const d = drag.current;
+    if (!d.down) return;
+    const dx = e.clientX - d.x;
+    if (Math.abs(dx) > 3) d.moved = true;
+    scrollerRef.current.scrollLeft = d.left - dx;
+  };
+  const endDrag = (e) => {
+    if (!drag.current.down) return;
+    drag.current.down = false;
+    const el = scrollerRef.current;
+    el.classList.remove('dragging');
+    if (el.hasPointerCapture(e.pointerId)) el.releasePointerCapture(e.pointerId);
+  };
   const scrollBy = (dir) => {
     const el = scrollerRef.current;
     if (!el) return;
@@ -280,7 +303,7 @@ function RecentWork() {
           </div>
         </div>
       </div>
-      <div ref={scrollerRef} className="work-scroller" role="region" aria-label="Case studies" tabIndex={0}>
+      <div ref={scrollerRef} className="work-scroller" role="region" aria-label="Case studies" tabIndex={0} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={endDrag} onPointerCancel={endDrag}>
         {cases.map((c, i) => (
           <article key={c.client} className="work-card" style={{ background: H.white, border: '1px solid rgba(17,0,216,.14)', padding: 'clamp(1.8rem, 3vw, 2.5rem) clamp(1.5rem, 2.4vw, 2.1rem)', boxShadow: '0 30px 80px rgba(17,0,216,.14)', display: 'flex', flexDirection: 'column' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>

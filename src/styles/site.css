@@ -377,7 +377,10 @@ section[data-section] { position: relative; }
 }
 
 /* ── Case studies scroller ──────────────────────────────────── */
-.work-scroller { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 5rem); scroll-padding-left: clamp(1.5rem, 5vw, 5rem); scrollbar-width: thin; }
+.work-scroller { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 5rem); scroll-padding-left: clamp(1.5rem, 5vw, 5rem); scrollbar-width: none; -ms-overflow-style: none; cursor: grab; }
+.work-scroller::-webkit-scrollbar { display: none; }
+.work-scroller.dragging { cursor: grabbing; scroll-snap-type: none; user-select: none; }
+.work-scroller.dragging * { pointer-events: none; }
 .work-card { flex: 0 0 min(460px, 86vw); scroll-snap-align: start; }
 .work-scroller:focus-visible { outline: 2px solid var(--blue); outline-offset: -4px; }
 @media (max-width: 720px) { .work-arrows { display: none !important; } }
