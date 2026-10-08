@@ -8,7 +8,6 @@ import { MaestroMark3D } from '../components/MaestroMark';
 import { MaestroIcon } from '../components/MaestroIcon';
 import { usePageBoot } from '../hooks/usePageBoot';
 import { BookLink } from '../components/BookLink';
-import { ScoreLine } from '../components/ScoreLine';
 import { ImageSlot } from '../components/ImageSlot';
 import { VideoSlot } from '../components/VideoSlot';
 import { FLAGS, HERO_LOOP_SRC, IMAGES, DATA_FAQ_ANSWER } from '../lib/config';
@@ -115,9 +114,6 @@ function HomeAbout() {
             <div style={{ position: 'absolute', width: 480, height: 480, maxWidth: '90%', borderRadius: '50%', background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,.18), transparent 60%)', pointerEvents: 'none' }} />
             <div style={{ position: 'relative', maxWidth: '100%' }}>
               <MaestroMark3D size={300} faceColor="#FFFFFF" sideColor="#7E76C8" depth={42} spin />
-              <div style={{ position: 'absolute', left: '-15%', right: '-15%', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
-                <ScoreLine color={ACCENT_DARK} />
-              </div>
             </div>
             <div className="mono" style={{ marginTop: 40, fontSize: 11, letterSpacing: '.18em', opacity: .75, textTransform: 'uppercase', textAlign: 'center', lineHeight: 1.6 }}>The loop closes when everything is in sync.</div>
           </div>
@@ -228,7 +224,6 @@ function HowItWorks() {
         <h2 data-reveal className="display" style={{ fontSize: 'clamp(2rem, 5.5vw, 3.5rem)', fontWeight: 700, letterSpacing: '-.04em', lineHeight: 1, margin: '20px 0 0' }}>Three steps, in plain order.</h2>
         <p data-reveal style={{ fontSize: '1.05rem', lineHeight: 1.6, opacity: .75, marginTop: 16, maxWidth: 520 }}>Most projects take 4–12 weeks from first call to going live.</p>
         <ol className="hiw-grid" style={{ listStyle: 'none', padding: 0, margin: 'clamp(2.5rem, 5vw, 4rem) 0 0' }}>
-          <li className="hiw-line" aria-hidden="true"><ScoreLine color={H.blue} /></li>
           {steps.map((st, i) => (
             <li key={st.t} data-reveal className="hiw-step">
               <div className="hiw-num mono">{i + 1}</div>
@@ -375,7 +370,6 @@ function HomeFAQ() {
   const toggle = (i) => setClosed((prev) => { const n = new Set(prev); if (n.has(i)) n.delete(i); else n.add(i); return n; });
   return (
     <section data-section="faq" style={{ background: H.white, color: H.ink, padding: 'clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 5rem)' }}>
-      <div className="wrap" style={{ marginBottom: 'clamp(2rem, 4vw, 3rem)' }}><ScoreLine color={H.blue} height={32} /></div>
       <div className="wrap stack-mobile" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 0.8fr) minmax(0, 1.4fr)', gap: 'clamp(2rem, 6vw, 5rem)', alignItems: 'start' }}>
         <div>
           <SectionLabel>FAQ</SectionLabel>
@@ -412,10 +406,6 @@ function HomeFAQ() {
 function FooterCTA() {
   return (
     <section data-section="cta" id="cta" className="cta-gradient" style={{ color: H.white, padding: 'clamp(5rem, 11vw, 9rem) clamp(1.5rem, 5vw, 5rem)', position: 'relative', overflow: 'hidden' }}>
-      {/* Score line, fully in sync, running behind the closing message. */}
-      <div aria-hidden="true" style={{ position: 'absolute', left: 0, right: 0, top: '50%', transform: 'translateY(-50%)', opacity: .35, pointerEvents: 'none' }}>
-        <ScoreLine color={H.white} settled height={56} />
-      </div>
       <div className="wrap" style={{ position: 'relative', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <div style={{ width: 'min(720px, 100%)', marginBottom: 28 }}><ImageSlot image={IMAGES.cta} /></div>
         <h2 data-reveal className="display" style={{ fontSize: 'clamp(2.5rem, 9vw, 5.5rem)', fontWeight: 700, letterSpacing: '-.045em', lineHeight: .95, margin: 0 }}>

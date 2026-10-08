@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { VIDEO } from '../lib/config';
-import { ScoreLine } from './ScoreLine';
 
 // Voiceover transcript, scene order. Keep in step with the case study figures.
 export const TRANSCRIPT = [
@@ -32,16 +31,11 @@ export function VideoSlot() {
           ) : (
             <>
               {VIDEO.poster && <img src={VIDEO.poster} alt="" width="1600" height="900" loading="lazy" decoding="async" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />}
-              <div style={{ position: 'absolute', left: '6%', right: '6%', top: '50%', color: '#7E76C8', transform: 'translateY(-50%)' }}><ScoreLine color="#7E76C8" settled /></div>
               <button type="button" className="video-play" aria-label={PLAY_LABEL} disabled={!ready} onClick={() => setPlaying(true)}>
                 <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M8 5l15 9-15 9V5z" fill="currentColor" /></svg>
               </button>
             </>
           )}
-        </div>
-        <div className="video-transcript" style={{ marginTop: 28, maxWidth: 720 }}>
-          <h2 className="mono" style={{ fontSize: 12, letterSpacing: '.22em', textTransform: 'uppercase', fontWeight: 500, opacity: .7, margin: 0 }}>Transcript</h2>
-          {TRANSCRIPT.map((t) => <p key={t} style={{ margin: '12px 0 0', lineHeight: 1.6, opacity: .82, fontSize: '0.98rem' }}>{t}</p>)}
         </div>
       </div>
     </section>
