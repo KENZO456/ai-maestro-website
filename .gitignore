@@ -4,3 +4,7 @@ dist/
 *.local
 .env
 .env.*
+
+# Design handoff bundle (reference only)
+project/
+README.md
