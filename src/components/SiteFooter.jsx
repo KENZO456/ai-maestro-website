@@ -22,7 +22,7 @@ export function SiteFooter() {
             <span className="serif" style={{ fontSize: 26 }}>AI <span style={{ fontStyle: 'italic' }}>maestro</span></span>
           </div>
           <div className="serif" style={{ fontSize: 'clamp(1rem, 1.6vw, 1.2rem)', marginTop: 22, opacity: .82, maxWidth: 360, lineHeight: 1.3 }}>
-            <strong style={{ fontWeight: 400 }}>AI Maestro. In sync.</strong><br />AI and automation for UK small businesses.
+            Everything that can run better, will.<br />Orchestrating AI. Optimising operations.
           </div>
           <div style={{ display: 'flex', gap: 12, marginTop: 28 }}>
             {SOCIALS.map((s) => (
@@ -47,7 +47,7 @@ export function SiteFooter() {
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
             <li><a href="mailto:hello@aimaestro.co" className="footer-link" style={{ fontSize: 14 }}>hello@aimaestro.co</a></li>
             <li style={{ fontSize: 14, opacity: .6 }}>Remote-first · UK</li>
-            <li style={{ marginTop: 6 }}><Link to="/contact" className="footer-link" style={{ fontSize: 14, opacity: 1, color: '#E6E4FF' }}>Book a discovery call →</Link></li>
+            <li style={{ marginTop: 6 }}><Link to="/free-audit" className="footer-link" style={{ fontSize: 14, opacity: 1, color: '#E6E4FF' }}>Get my free audit →</Link></li>
           </ul>
         </div>
       </div>
@@ -55,7 +55,7 @@ export function SiteFooter() {
         <div style={{ fontSize: 11, letterSpacing: '.2em', opacity: .45 }}>© 2026 AI MAESTRO LTD · ALL RIGHTS RESERVED</div>
         <div style={{ display: 'flex', gap: 22, flexWrap: 'wrap' }}>
           <a href="#" className="footer-link mono" style={{ fontSize: 11, letterSpacing: '.2em' }}>PRIVACY POLICY</a>
-          <a href="#" className="footer-link mono" style={{ fontSize: 11, letterSpacing: '.2em' }}>TERMS OF SERVICE</a>
+          <a href="#" className="footer-link mono" style={{ fontSize: 11, letterSpacing: '.2em' }}>COOKIES</a>
         </div>
       </div>
     </footer>

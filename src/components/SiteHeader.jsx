@@ -4,12 +4,12 @@ import { MaestroMark } from './MaestroMark';
 import { BookLink } from './BookLink';
 
 const NAV = [
-  { label: 'Home', href: '/' },
+  { label: 'How it works', href: '/#how-it-works' },
+  { label: 'What we optimise', href: '/#what-we-optimise' },
+  { label: 'Who we help', href: '/who-we-help' },
+  { label: 'Security', href: '/security' },
   { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'FAQ', href: '/faq' },
 ];
 
 const ARROW = (
@@ -37,8 +37,8 @@ export function SiteHeader({ dark = false }) {
 
   useEffect(() => { setOpen(false); }, [location.pathname]);
 
-  const markColor = (dark && !scrolled) ? '#FAF8F4' : '#1100D8';
-  const wordColor = (dark && !scrolled) ? '#FAF8F4' : '#1100D8';
+  const markColor = dark ? '#FAF8F4' : '#1100D8';
+  const wordColor = dark ? '#FAF8F4' : '#1100D8';
 
   return (
     <>
@@ -59,12 +59,12 @@ export function SiteHeader({ dark = false }) {
               </Link>
             ))}
           </nav>
-          <BookLink className="btn btn-ink">Book a call {ARROW}</BookLink>
+          <BookLink className="btn btn-ink">Get my free audit {ARROW}</BookLink>
           <button
             className="nav-toggle"
             aria-label="Open menu"
             onClick={() => setOpen(true)}
-            style={{ color: (dark && !scrolled) ? '#FAF8F4' : '#0B0B2B' }}
+            style={{ color: dark ? '#FAF8F4' : '#0B0B2B' }}
           >
             <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
               <path d="M3 7h20M3 13h20M3 19h20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
@@ -88,6 +88,7 @@ export function SiteHeader({ dark = false }) {
             <span className="idx">0{i + 1}</span>{n.label}
           </Link>
         ))}
+        <BookLink onClick={() => setOpen(false)} style={{ fontSize: 'clamp(1.2rem, 5vw, 1.8rem)', color: '#E6E4FF', borderBottom: 'none', marginTop: 12 }}>Get my free audit →</BookLink>
       </div>
     </>
   );
