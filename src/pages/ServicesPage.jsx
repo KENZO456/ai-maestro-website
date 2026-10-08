@@ -19,7 +19,7 @@ const SERVICES = [
     solvesLabel: 'What it solves',
     solves: [['Data Entry & Processing', 'Automate invoice processing, customer data input, and report generation.'], ['Customer Service', 'AI chatbots handle FAQs and route complex issues to humans.'], ['Analysis & Insights', 'AI analyses data, spots trends, and surfaces opportunities.'], ['Content Review', 'AI screens applications, resumes, or proposals against your criteria.']],
     how: [['Discovery', 'We map your process and find where manual work kills time.'], ['Design', 'We plan how AI plugs in, what stays human, what goes to AI.'], ['Build', 'We integrate, test, refine, and go live.'], ['Measure', 'We track hours saved, costs reduced, and revenue lifted.']],
-    example: { body: 'One client spent 15 hours/week processing invoices manually. We integrated AI to read, categorise, and log them automatically.', stats: [['15 hrs → 1 hr', 'per week'], ['£3k', 'cost'], ['167%', 'ROI in 2 months']] },
+    example: { body: 'One client spent 15 hours/week processing invoices manually. We integrated AI to read, categorise, and log them automatically.', stats: [['15 hrs → 1 hr', 'per week'], ['£3k', 'cost'], ['£5k', 'saved in two months']] },
     pricing: [['Small integration', 'One workflow', '£2–4k', '4–6 weeks'], ['Medium integration', 'Multiple workflows', '£5–8k', '8–12 weeks'], ['Custom solution', 'Built to scope', 'Quote', '']],
   },
   {
@@ -168,7 +168,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title={<>Five ways we put <span className="serif" style={{ fontWeight: 400, color: '#E6E4FF' }}>AI to work.</span></>}
-        sub="Pick what fits your business, or we'll help you figure out what you need. Every engagement is scoped, measured, and built to deliver results in 30–90 days."
+        sub="Pick what fits your business, or we'll help you figure out what you need. Every engagement is scoped, measured, and built to deliver results in 4–12 weeks."
         minH="62vh"
       />
       <ServiceIndex />

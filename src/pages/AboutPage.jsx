@@ -22,7 +22,7 @@ function Origin() {
           </h2>
           <div data-reveal style={{ marginTop: 28, display: 'flex', flexDirection: 'column', gap: 20, maxWidth: 620 }}>
             <p style={{ fontSize: 'clamp(1.02rem, 1.6vw, 1.18rem)', lineHeight: 1.65, opacity: .8, margin: 0 }}>
-              Feranmi founded AI Maestro after watching SMBs struggle. Brilliant ideas, hardworking teams, but drowning in manual work that ate time and money.
+              Feranmi founded AI Maestro after watching small businesses struggle. Brilliant ideas, hardworking teams, but drowning in manual work that ate time and money.
             </p>
             <p style={{ fontSize: 'clamp(1.02rem, 1.6vw, 1.18rem)', lineHeight: 1.65, opacity: .8, margin: 0 }}>
               They knew AI could help; they just didn&rsquo;t know how to use it without expensive consultants or building it themselves. <strong style={{ fontWeight: 600, color: A.blue }}>AI Maestro exists to close that gap.</strong>
@@ -74,7 +74,7 @@ function Beliefs() {
 
 function TeamAndWhy() {
   const whyUs = [
-    "We're specialists in SMB transformation. We speak your language.",
+    "We're specialists in small-business AI and automation. We speak your language.",
     "We blend creativity with technical expertise, design, strategy, and code working together.",
     "We iterate until you're happy. Your success is our success.",
     "We're transparent about cost, timeline, and what's realistic.",
@@ -138,7 +138,7 @@ export default function AboutPage() {
       <SiteHeader dark={true} />
       <PageHero
         eyebrow="About · The Agency"
-        title={<>We&rsquo;re AI Maestro. We help UK SMBs <span className="serif" style={{ fontWeight: 400, color: '#E6E4FF' }}>do more with less.</span></>}
+        title={<>We&rsquo;re AI Maestro. We help UK small businesses <span className="serif" style={{ fontWeight: 400, color: '#E6E4FF' }}>do more with less.</span></>}
         sub="A remote-first AI integration and digital services firm, translating AI into measurable results for small and medium businesses."
       />
       <Origin />
