@@ -22,7 +22,7 @@ export function SiteFooter() {
             <span className="serif" style={{ fontSize: 26 }}>AI <span style={{ fontStyle: 'italic' }}>maestro</span></span>
           </div>
           <div className="serif" style={{ fontSize: 'clamp(1rem, 1.6vw, 1.2rem)', marginTop: 22, opacity: .82, maxWidth: 360, lineHeight: 1.3 }}>
-            <strong style={{ fontWeight: 400 }}>AI Maestro. In sync.</strong><br />AI and automation for UK small businesses.
+            AI Maestro. In sync.<br />AI and automation for UK small businesses
           </div>
           <div style={{ display: 'flex', gap: 12, marginTop: 28 }}>
             {SOCIALS.map((s) => (
@@ -36,7 +36,7 @@ export function SiteFooter() {
         <div>
           <div className="mono" style={{ fontSize: 11, letterSpacing: '.22em', opacity: .5, marginBottom: 18 }}>NAVIGATE</div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {NAV.map((n) => (
+            {[...NAV, { label: 'Security', href: '/security' }, { label: 'FAQ', href: '/faq' }].map((n) => (
               <li key={n.label}><Link to={n.href} className="footer-link" style={{ fontSize: 14 }}>{n.label}</Link></li>
             ))}
           </ul>
@@ -47,15 +47,16 @@ export function SiteFooter() {
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
             <li><a href="mailto:hello@aimaestro.co" className="footer-link" style={{ fontSize: 14 }}>hello@aimaestro.co</a></li>
             <li style={{ fontSize: 14, opacity: .6 }}>Remote-first · UK</li>
-            <li style={{ marginTop: 6 }}><Link to="/contact" className="footer-link" style={{ fontSize: 14, opacity: 1, color: '#E6E4FF' }}>Book a discovery call →</Link></li>
+            <li style={{ marginTop: 6 }}><Link to="/contact" className="footer-link" style={{ fontSize: 14, opacity: 1, color: '#E6E4FF' }}>Book a free call →</Link></li>
           </ul>
         </div>
       </div>
       <div className="wrap mono" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 24, gap: 16, flexWrap: 'wrap' }}>
         <div style={{ fontSize: 11, letterSpacing: '.2em', opacity: .45 }}>© 2026 AI MAESTRO LTD · ALL RIGHTS RESERVED</div>
         <div style={{ display: 'flex', gap: 22, flexWrap: 'wrap' }}>
-          <a href="#" className="footer-link mono" style={{ fontSize: 11, letterSpacing: '.2em' }}>PRIVACY POLICY</a>
-          <a href="#" className="footer-link mono" style={{ fontSize: 11, letterSpacing: '.2em' }}>TERMS OF SERVICE</a>
+          <a href="#" className="footer-link mono" style={{ fontSize: 11, letterSpacing: '.2em' }}>PRIVACY</a>
+          <a href="#" className="footer-link mono" style={{ fontSize: 11, letterSpacing: '.2em' }}>TERMS</a>
+          <a href="#" className="footer-link mono" style={{ fontSize: 11, letterSpacing: '.2em' }}>COOKIES</a>
         </div>
       </div>
     </footer>
