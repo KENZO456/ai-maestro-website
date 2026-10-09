@@ -4,12 +4,11 @@ import { MaestroMark } from './MaestroMark';
 import { BookLink } from './BookLink';
 
 const NAV = [
-  { label: 'How it works', href: '/#how-it-works' },
-  { label: 'What we optimise', href: '/#what-we-optimise' },
-  { label: 'Who we help', href: '/who-we-help' },
-  { label: 'Security', href: '/security' },
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Pricing', href: '/pricing' },
   { label: 'About', href: '/about' },
-  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 const ARROW = (
@@ -59,7 +58,7 @@ export function SiteHeader({ dark = false }) {
               </Link>
             ))}
           </nav>
-          <BookLink className="btn btn-ink">Get my free audit {ARROW}</BookLink>
+          <BookLink className="btn btn-ink">Book a free call {ARROW}</BookLink>
           <button
             className="nav-toggle"
             aria-label="Open menu"
@@ -88,7 +87,7 @@ export function SiteHeader({ dark = false }) {
             <span className="idx">0{i + 1}</span>{n.label}
           </Link>
         ))}
-        <BookLink onClick={() => setOpen(false)} style={{ fontSize: 'clamp(1.2rem, 5vw, 1.8rem)', color: '#E6E4FF', borderBottom: 'none', marginTop: 12 }}>Get my free audit →</BookLink>
+        <BookLink onClick={() => setOpen(false)} style={{ fontSize: 'clamp(1.2rem, 5vw, 1.8rem)', color: '#E6E4FF', borderBottom: 'none', marginTop: 12 }}>Book a free call →</BookLink>
       </div>
     </>
   );

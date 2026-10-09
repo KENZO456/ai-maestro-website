@@ -9,7 +9,7 @@ export default function NotFoundPage() {
   return (
     <>
       <SiteHeader dark />
-      <PageHero eyebrow="404" title="This page didn't run better. It just didn't run." minH="70vh" />
+      <PageHero eyebrow="404" title="This page is out of sync." minH="70vh" />
       <div style={{ background: '#FAF8F4', padding: '3rem clamp(1.5rem, 5vw, 5rem)' }}>
         <div className="wrap"><Link to="/" className="btn btn-blue">Back to home {ARROW}</Link></div>
       </div>

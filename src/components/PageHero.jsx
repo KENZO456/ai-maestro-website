@@ -2,7 +2,7 @@ import { ShaderBG } from './ShaderBG';
 
 const SITE = { blue: '#1100D8', blueLite: '#E6E4FF', white: '#FAF8F4', ink: '#0B0B2B' };
 
-export function PageHero({ eyebrow, title, sub, align = 'left', minH = '70vh' }) {
+export function PageHero({ eyebrow, title, sub, children, align = 'left', minH = '70vh' }) {
   return (
     <section data-section="page-hero" data-screen-label="Hero" style={{
       minHeight: minH, position: 'relative', background: SITE.ink, color: SITE.white, overflow: 'hidden',
@@ -18,6 +18,7 @@ export function PageHero({ eyebrow, title, sub, align = 'left', minH = '70vh' })
         </div>
         <h1 data-reveal className="display" style={{ fontSize: 'clamp(2.5rem, 7.5vw, 5.5rem)', fontWeight: 700, letterSpacing: '-.045em', lineHeight: .95, margin: 0, maxWidth: 1020 }}>{title}</h1>
         {sub && <p data-reveal style={{ fontSize: 'clamp(1.05rem, 1.9vw, 1.4rem)', lineHeight: 1.5, marginTop: 28, maxWidth: 720, opacity: .82 }}>{sub}</p>}
+        {children}
       </div>
     </section>
   );

@@ -74,7 +74,7 @@ export function Accordion({ items }) {
 }
 
 // Closing call to action: every page ends on the same button.
-export function FinalCTA({ title = 'Find out what your business could run like.', body = 'One free audit. Every inefficiency found. Everything that can run better, will.', button = 'Get my free audit' }) {
+export function FinalCTA({ title = "Let's find the rest.", body = "Tell us about a typical week. We'll tell you honestly what's worth automating, and what isn't.", button = 'Book a free 20-minute call' }) {
   return (
     <section data-section="cta" className="cta-gradient" style={{ color: C.white, padding: 'clamp(5rem, 11vw, 9rem) clamp(1.5rem, 5vw, 5rem)', textAlign: 'center' }}>
       <div className="wrap" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -90,4 +90,36 @@ export function FinalCTA({ title = 'Find out what your business could run like.'
 
 export function TextLink({ to, children }) {
   return <Link to={to} data-reveal className="text-link">{children} <span aria-hidden="true">→</span></Link>;
+}
+
+// Data table. `head` is an array of column labels; each row is an array of cells (first cell is the row header).
+// `stack` turns rows into cards on mobile, using the head labels.
+export function CopyTable({ head, rows, stack = false }) {
+  return (
+    <div data-reveal className="copy-table-wrap">
+      <table className={`copy-table${stack ? ' stack' : ''}`}>
+        <thead><tr>{head.map((h, i) => <th key={i} scope="col">{h}</th>)}</tr></thead>
+        <tbody>
+          {rows.map((r, i) => (
+            <tr key={i}>
+              {r.map((c, j) => j === 0
+                ? <th key={j} scope="row">{c}</th>
+                : <td key={j} data-label={head[j]}>{c}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+// Question and answer pairs, always open (short pages like Pricing and Security).
+export function QAList({ items }) {
+  return (
+    <div className="qa-list">
+      {items.map(([q, a]) => (
+        <div key={q} data-reveal><h3>{q}</h3><p>{a}</p></div>
+      ))}
+    </div>
+  );
 }

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import { PageHero } from '../components/PageHero';
@@ -7,28 +6,24 @@ import { usePageBoot } from '../hooks/usePageBoot';
 import { useMeta } from '../hooks/useMeta';
 
 const FAQS = [
-  { q: 'Is the audit really free?', a: 'Yes. It’s free for UK businesses with up to 250 staff, with no obligation and no hard sell, and the roadmap is yours to keep.' },
-  { q: 'What does “everything that can be optimised” actually mean?', a: 'We look across your whole business, not one department. Anything that can be automated, simplified or sped up goes on your roadmap, ranked by what it’s worth to you.' },
-  { q: 'Is my data safe?', a: <>We start with read-only access, only touch what each job needs, keep your data separate from every other client’s, and sign an NDA and Data Processing Agreement first. <Link to="/security" style={{ color: 'inherit', fontWeight: 600 }}>Read how we protect your data →</Link></> },
-  { q: 'Do I need new software?', a: 'Usually not. We work inside the tools you already use, and if something new would genuinely help, we’ll tell you why and what it costs.' },
-  { q: 'How long does it take?', a: 'Most builds go live in 4 to 12 weeks, depending on scope.' },
-  { q: 'How much does it cost?', a: 'The audit is free. Every item on your roadmap comes with a fixed price before anything starts.' },
-  { q: 'Will AI replace my staff?', a: <>It takes the repetitive work, not the jobs. 95% of UK SMEs using AI say it hasn’t changed their headcount.²</> },
-  { q: 'What if an automation gets something wrong?', a: 'Anything important waits for your approval, every run is logged, and a failed step stops safely and alerts us instead of guessing.' },
-  { q: 'We’re not technical. Is that a problem?', a: 'Not at all. That’s what the Upskill step is for.' },
-  { q: 'Do you only work in Bristol and Manchester?', a: 'No. We’re remote-first and work across the UK; Bristol and Manchester are where we meet in person.' },
+  { q: 'How long does it take?', a: 'Most builds go live in 4–12 weeks. Your Deep Audit gives you the exact timeline.' },
+  { q: 'What does it cost?', a: 'The first call is free. Audits start at £495, builds at £1,500 fixed, and Care at £200 a month.' },
+  { q: 'Do I need to be technical?', a: 'No. We build it, then train your team to run it.' },
+  { q: 'Will AI replace my team?', a: 'No. It takes the repeat work, so your people do the work only they can do.' },
+  { q: 'Is my data safe?', a: 'Yes. We build on test data, you approve anything that matters, and every run is logged.' },
+  { q: 'Where is your team based?', a: 'Our client team is in Bristol and Manchester. Our designers and developers are in Nigeria, working UK hours under a UK data transfer agreement.' },
+  { q: 'What if we’re not happy with the result?', a: 'If it doesn’t do what we agreed, we fix it free. If we still can’t, we refund that fix.' },
 ];
 
 export default function FaqPage() {
   usePageBoot();
-  useMeta('FAQ | AI Maestro', 'Is the audit really free? Is my data safe? Will AI replace my staff? Straight answers to the questions we hear most.');
+  useMeta('FAQ — AI Maestro', 'Straight answers on cost, timelines, data and what happens after we build.');
   return (
     <>
       <SiteHeader dark />
-      <PageHero eyebrow="FAQ" title="Questions, answered." sub="Straight answers to the questions we hear most." minH="50vh" />
+      <PageHero eyebrow="FAQ" title="Straight answers." minH="40vh" />
       <Section tone="light">
         <Accordion items={FAQS} />
-        <p className="footnote">² British Chambers of Commerce and Atos, Future of Work: AI in the Workplace, March 2026. <a href="https://itbrief.co.uk/story/most-uk-firms-now-use-ai-as-smes-see-roles-unchanged" target="_blank" rel="noopener noreferrer">Read the coverage</a>.</p>
       </Section>
       <FinalCTA />
       <SiteFooter />

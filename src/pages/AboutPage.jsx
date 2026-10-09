@@ -2,52 +2,52 @@ import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import { PageHero } from '../components/PageHero';
 import { MaestroMark } from '../components/MaestroMark';
-import { Section, Bullets, FinalCTA, C } from '../components/Blocks';
+import { Section, FinalCTA, C } from '../components/Blocks';
 import { usePageBoot } from '../hooks/usePageBoot';
 import { useMeta } from '../hooks/useMeta';
 
+const FACTS = [
+  ['4–12 weeks', 'from first call to live'],
+  ['2 cities', 'Bristol and Manchester, in person when it helps'],
+  ['1 aim', 'your business, in sync'],
+];
+
 export default function AboutPage() {
   usePageBoot();
-  useMeta('About AI Maestro | Remote-First AI Integration, UK', 'We audit, automate and upskill. A remote-first AI integration firm helping UK small businesses work smarter, starting in Bristol and Manchester.');
+  useMeta('About — AI Maestro', 'Designers and developers in the UK and Nigeria, working with AI agents to keep small businesses in sync.');
   return (
     <>
       <SiteHeader dark />
-      <PageHero
-        eyebrow="About"
-        title="We're AI Maestro."
-        sub="A remote-first AI integration firm helping UK small businesses work smarter. We don't sell software. We audit how your business runs, automate and optimise everything that can be, using the tools you already have, then train your team to run it."
-        minH="60vh"
-      />
-      <Section tone="light" eyebrow="Why “Maestro”" title="A maestro doesn't play every instrument.">
-        <p data-reveal style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', lineHeight: 1.6, marginTop: 20, maxWidth: 680 }}>
-          They make every instrument play together. That&rsquo;s what we do with your systems.
+      <PageHero eyebrow="About" title="Most AI projects fail because the business around them is out of sync." minH="60vh" />
+      <Section tone="light">
+        <p data-reveal style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', lineHeight: 1.6, margin: 0, maxWidth: 700 }}>
+          The tools work. What breaks is everything around them: the handoffs, the messy data, the team nobody trained. So we start with how your business really runs, and build from there.
         </p>
+        <p data-reveal style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.35rem)', lineHeight: 1.6, marginTop: 24, maxWidth: 700 }}>
+          We&rsquo;re a team of designers and developers in Nigeria and the UK, working alongside AI agents. You meet us in Bristol or Manchester. Our team in Nigeria works the same hours you do. You get fast builds, fair prices and people who love this work.
+        </p>
+        <div className="card-grid c3">
+          {FACTS.map(([n, l]) => (
+            <div key={n} data-reveal className="info-card">
+              <div className="stat-big">{n}</div>
+              <p>{l}</p>
+            </div>
+          ))}
+        </div>
       </Section>
-      <Section tone="cream" eyebrow="Our mark" title="A bridge between technology and human mastery.">
-        <div style={{ display: 'flex', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center', flexWrap: 'wrap', marginTop: 28 }}>
+      <Section tone="cream">
+        <div style={{ display: 'flex', gap: 'clamp(2rem, 5vw, 4rem)', alignItems: 'center', flexWrap: 'wrap' }}>
           <div data-reveal style={{ width: 120, flexShrink: 0 }}><MaestroMark size={120} stroke={C.blue} /></div>
           <p data-reveal style={{ fontSize: '1.1rem', lineHeight: 1.65, maxWidth: 560, margin: 0 }}>
-            Our icon is built from parallel lines and three anchor points: Assess, Build, Upskill. It&rsquo;s a bridge between technology and human mastery, which is exactly where we work.
+            The loop closes when everything is in sync.
           </p>
         </div>
       </Section>
-      <Section tone="light" eyebrow="How we work" title="Assess. Build. Upskill.">
-        <Bullets items={[
-          ['Assess:', 'a free deep audit of the whole business'],
-          ['Build:', 'automation and optimisation inside your existing tools'],
-          ['Upskill:', 'training so your team runs it with confidence'],
-        ]} />
-      </Section>
-      <Section tone="lite" eyebrow="Where we work" title="Remote-first, across the UK.">
-        <p data-reveal style={{ fontSize: '1.1rem', lineHeight: 1.65, marginTop: 20, maxWidth: 620 }}>
-          We&rsquo;re starting in Bristol and Manchester, where we&rsquo;re happy to meet over coffee.
-        </p>
-      </Section>
-      {/* TEAM SLOT: founder name, photo and one line on why they started AI Maestro go here once supplied. Do not add placeholders. */}
+      {/* TEAM PHOTO SLOT: real team photos, UK and Nigeria. No stock people, no placeholders on the live site. */}
       <Section tone="ink" shader>
-        <p data-reveal className="serif" style={{ fontSize: 'clamp(1.6rem, 4vw, 2.8rem)', lineHeight: 1.2, margin: 0 }}>Orchestrating AI. Optimising operations.</p>
+        <p data-reveal className="serif" style={{ fontSize: 'clamp(1.6rem, 4vw, 2.8rem)', lineHeight: 1.2, margin: 0 }}>AI Maestro. In sync.</p>
       </Section>
-      <FinalCTA />
+      <FinalCTA title="Book a free 20-minute call." />
       <SiteFooter />
     </>
   );

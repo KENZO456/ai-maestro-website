@@ -434,3 +434,26 @@ section[data-section] { position: relative; }
   body { padding-bottom: 64px; }
   .cookie-banner { bottom: 76px; }
 }
+
+/* ── Copy v3: launch banner, ticker, data tables ── */
+.launch-banner { position: relative; z-index: 2; margin-bottom: 28px; padding: 10px 18px; border: 1px solid rgba(230,228,255,.35); border-radius: 999px; font-size: 13px; line-height: 1.4; background: rgba(255,255,255,.06); max-width: 100%; }
+.ticker { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; margin: 0; padding: 0; list-style: none; }
+.ticker li::before { content: '·'; margin-right: 22px; opacity: .5; }
+.ticker li:first-child::before { content: none; }
+.copy-table-wrap { margin-top: clamp(1.5rem, 3vw, 2.5rem); overflow-x: auto; border: 1px solid rgba(17,0,216,.14); border-radius: 18px; background: var(--white); color: var(--ink); }
+.copy-table { width: 100%; border-collapse: collapse; font-size: .98rem; line-height: 1.5; min-width: 560px; }
+.copy-table th, .copy-table td { text-align: left; vertical-align: top; padding: 16px 20px; border-bottom: 1px solid rgba(17,0,216,.1); }
+.copy-table thead th { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; color: var(--blue); }
+.copy-table tbody tr:last-child td, .copy-table tbody tr:last-child th { border-bottom: none; }
+.copy-table tbody th { font-family: 'Space Grotesk', sans-serif; font-weight: 600; }
+.qa-list { margin-top: clamp(1.5rem, 3vw, 2.5rem); display: grid; gap: 18px; max-width: 760px; }
+.qa-list h3 { margin: 0; font-family: 'Space Grotesk', sans-serif; font-size: 1.15rem; letter-spacing: -.02em; }
+.qa-list p { margin: 6px 0 0; line-height: 1.6; opacity: .82; }
+@media (max-width: 760px) {
+  .copy-table.stack { min-width: 0; }
+  .copy-table.stack thead { display: none; }
+  .copy-table.stack, .copy-table.stack tbody, .copy-table.stack tr, .copy-table.stack th, .copy-table.stack td { display: block; width: 100%; }
+  .copy-table.stack tr { padding: 8px 0; border-bottom: 1px solid rgba(17,0,216,.1); }
+  .copy-table.stack th, .copy-table.stack td { border-bottom: none; padding: 6px 20px; }
+  .copy-table.stack td[data-label]::before { content: attr(data-label); display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); margin-bottom: 2px; }
+}
