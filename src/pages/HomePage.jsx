@@ -27,6 +27,8 @@ function Hero() {
       <ShaderBG intensity={1.0} opacity={0.95} />
       <div aria-hidden="true" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', background: 'radial-gradient(ellipse 86% 70% at 50% 46%, rgba(11,11,43,.28), rgba(11,11,43,.8) 100%)' }} />
       <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', maxWidth: 1000 }}>
+        {/* Remove this banner once 10 firms have signed. */}
+        <p data-reveal className="launch-banner">First 10 firms in Bristol and Manchester: Deep Audit free.</p>
         <p data-reveal className="mono" style={{ margin: '0 0 22px', fontSize: 12, letterSpacing: '.22em', textTransform: 'uppercase', color: C.blueLite }}>AI and automation for UK small businesses</p>
         <h1 data-reveal className="display" style={{ margin: 0, fontSize: 'clamp(2.6rem, 8vw, 6rem)', fontWeight: 700, lineHeight: 1, letterSpacing: '-.045em' }}>
           Do what you do best.<br />We&rsquo;ll automate the rest.
