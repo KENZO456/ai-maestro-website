@@ -3,7 +3,7 @@ import { SiteHeader, ARROW } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import { PageHero } from '../components/PageHero';
 import { Section, C } from '../components/Blocks';
-import { BOOKING_FORM_ENDPOINT, CONTACT_EMAIL } from '../lib/config';
+import { BOOKING_FORM_ENDPOINT, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_HREF } from '../lib/config';
 import { usePageBoot } from '../hooks/usePageBoot';
 import { useMeta } from '../hooks/useMeta';
 
@@ -113,7 +113,12 @@ export default function ContactPage() {
       <SiteHeader dark />
       <PageHero eyebrow="Contact" title="Book your free 20-minute call." sub="Leave with your top three wins on one page." minH="50vh" />
       <Section id="book" tone="cream">
-        <div style={{ maxWidth: 820, margin: '0 auto' }}><BookingForm /></div>
+        <div style={{ maxWidth: 820, margin: '0 auto' }}>
+          <BookingForm />
+          <p data-reveal style={{ marginTop: 24, fontSize: '1.02rem', lineHeight: 1.6, textAlign: 'center' }}>
+            Prefer to talk? Call <a href={CONTACT_PHONE_HREF} style={{ color: C.blue, fontWeight: 600 }}>{CONTACT_PHONE}</a> or email <a href={`mailto:${CONTACT_EMAIL}`} style={{ color: C.blue, fontWeight: 600 }}>{CONTACT_EMAIL}</a>.
+          </p>
+        </div>
       </Section>
       <SiteFooter />
     </>

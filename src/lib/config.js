@@ -6,4 +6,8 @@ export const BOOKING_URL = '/contact';
 // While null, the form only shows the confirmation message and sends nothing.
 export const BOOKING_FORM_ENDPOINT = null;
 
-export const CONTACT_EMAIL = 'hello@aimaestro.co';
+export const CONTACT_EMAIL = 'hello@aimaestro.uk';
+
+// Number clients use to book a call.
+export const CONTACT_PHONE = '+44 7827 673056';
+export const CONTACT_PHONE_HREF = 'tel:+447827673056';

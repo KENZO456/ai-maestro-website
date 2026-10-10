@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { MaestroMark } from './MaestroMark';
 import { PathSim } from './PathSim';
 import { NAV } from './SiteHeader';
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_HREF } from '../lib/config';
 
 const SOCIALS = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/', path: 'M4.98 3.5a2 2 0 1 1-.02 4 2 2 0 0 1 .02-4ZM3.4 9h3.2v11.5H3.4V9Zm5.3 0h3.06v1.57h.05c.43-.8 1.48-1.65 3.05-1.65 3.26 0 3.86 2.15 3.86 4.94v6.64h-3.2v-5.88c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.52-2.26 3.1v5.98H8.7V9Z' },
@@ -45,7 +46,8 @@ export function SiteFooter() {
         <div>
           <div className="mono" style={{ fontSize: 11, letterSpacing: '.22em', opacity: .5, marginBottom: 18 }}>CONTACT</div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
-            <li><a href="mailto:hello@aimaestro.co" className="footer-link" style={{ fontSize: 14 }}>hello@aimaestro.co</a></li>
+            <li><a href={`mailto:${CONTACT_EMAIL}`} className="footer-link" style={{ fontSize: 14 }}>{CONTACT_EMAIL}</a></li>
+            <li><a href={CONTACT_PHONE_HREF} className="footer-link" style={{ fontSize: 14 }}>{CONTACT_PHONE}</a></li>
             <li style={{ fontSize: 14, opacity: .6 }}>Remote-first · UK</li>
             <li style={{ marginTop: 6 }}><Link to="/contact" className="footer-link" style={{ fontSize: 14, opacity: 1, color: '#E6E4FF' }}>Book a free call →</Link></li>
           </ul>
